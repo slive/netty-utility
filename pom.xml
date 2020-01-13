@@ -6,12 +6,34 @@
 
     <groupId>slive.netty</groupId>
     <artifactId>netty-utility</artifactId>
+    <packaging>pom</packaging>
     <version>${version}</version>
+    <modules>
+        <module>netty-kcp-ws</module>
+        <module>netty-proxy</module>
+    </modules>
 
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version>1.0.0</version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.42.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jpower.kcp</groupId>
+                <artifactId>kcp-netty</artifactId>
+                <version>1.4.8</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
 
 </project>
