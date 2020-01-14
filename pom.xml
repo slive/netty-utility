@@ -7,7 +7,7 @@
     <groupId>slive.netty</groupId>
     <artifactId>netty-utility</artifactId>
     <packaging>pom</packaging>
-    <version>${version}</version>
+    <version>1.0.0</version>
     <modules>
         <module>netty-kcp-ws</module>
         <module>netty-proxy</module>
@@ -16,7 +16,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version>1.0.0</version>
+        <java.version>1.8</java.version>
+        <source.version>${java.version}</source.version>
+        <target.version>${java.version}</target.version>
+        <netty.version>4.1.41.Final</netty.version>
+        <netty.kcp.version>1.4.8</netty.kcp.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <fastjson.version>1.2.59</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -24,16 +30,46 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
-                <version>4.1.42.Final</version>
+                <version>${netty.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jpower.kcp</groupId>
                 <artifactId>kcp-netty</artifactId>
-                <version>1.4.8</version>
+                <version>${netty.kcp.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
         </dependencies>
-
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${source.version}</source>
+                        <target>${target.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
 
 </project>
