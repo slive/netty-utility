@@ -23,7 +23,7 @@
         <netty.kcp.version>1.4.8</netty.kcp.version>
         <slf4j.version>1.7.25</slf4j.version>
         <fastjson.version>1.2.59</fastjson.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencyManagement>
